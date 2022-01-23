@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <!--PÁGINA-->
+        <title>Lista de Compras</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale:1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--FONTES-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+        <!--ESTILOS GERAIS-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/base.css">
+
+        <!--CABEÇALHO-->
+        <link rel="stylesheet" href="css/cabecalho/cabecalho.css">
+        <link rel="stylesheet" href="css/cabecalho/cabecalho-logo.css">
+
+        <!--INSERCAO-->
+        <link rel="stylesheet" href="css/inserir1.css">
+
+        <!--CABECALHO TABELA-->
+        <link rel="stylesheet" href="css/cabecalho tabela/titulo.css">
+        <link rel="stylesheet" href="css/cabecalho tabela/titulo-cabecalho.css">
+
+        <!--TABELA-->
+        <link rel="stylesheet" href="css/tabela/tabela.css">
+        <link rel="stylesheet" href="css/tabela/tabela-cabecalho.css">
+        <link rel="stylesheet" href="css/tabela/tabela-corpo.css">
+        <link rel="stylesheet" href="css/tabela/tabela-dinamico.css">
+
+        <!--RODAPE-->
+        <link rel="stylesheet" href="css/rodape/rodape.css">
+        <link rel="stylesheet" href="css/rodape/rodape-logo.css">
+        <link rel="stylesheet" href="css/rodape/rodape-total.css">
+
+    </head>
+
+    <body>
+        <header class="cabecalho">
+            <div class="cabecalho__logo">
+
+                <img src="imagens/vetor.png" class="cabecalho__vetor" alt="simbolo lista de compras">
+
+                <img src="imagens/logo.svg" class="cabecalho__texto" alt="Logotipo lista de compras">
+            </div>
+        </header>
+
+        <main>
+            <section class="inserir1">
+                <input id="inserir-campo" placeholder="Insira o titulo das tabelas aqui">
+                <div class="inserir1__bloco">
+                    <button class="inserir1__botao" id="adcionar-tabela">INSERIR TABELA</button>
+                </div>
+            </section>
+
+            <section class="titulo">
+                <table>
+                    <thead>
+                        <th class="titulo__done">Feito!</th>
+                        <th class="titulo__qtde">Qtde</th>
+                        <th class="titulo__descricao"> Descrição</th>
+                        <th class="titulo__preco">Preço</th>
+                        <th class="titulo__subtotal">Subtotal</th>
+                    </thead>
+                </table>
+            </section>
+            
+            <section class="tabelas">
+                <div class="tabela">
+                    <table class="tabela__estrutura">
+                        <thead class="tabela__cabecalho">
+                            <th class="tabela__cabecalho-botao">&#10010;</th>
+                            <th class="tabela__cabecalho-descricao" colspan="2">Clique uma vez para editar e duas para excluir</th>
+                            <th class="tabela__cabecalho-texto">Subtotal:</th>
+                            <th class="tabela__cabecalho-subtotal"></th>
+                        </thead>
+
+                        <tbody class="tabela__corpo">
+                            <tr class="tabela__linha1">
+                                <td class="tabela__done"><input type="checkbox" class="done"></td>
+                                <td class="tabela__qtde">0.00</td>
+                                <td class="tabela__descricao">Clique uma vez para editar e duas para excluir</td>
+                                <td class="tabela__preco">R$ 0.00</td>                                
+                                <td class="tabela__multiplicacao"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer class="rodape">
+            <div class="rodape__total">
+                <div class="rodape__gasto"><p>Gasto Total</p></div>
+                <div class="rodape__valor"><p class="rodape__valor-p">R$ 0,00</p></div>
+            </div>
+            <div class="rodape__logo">
+                <img src="imagens/logope.svg" alt="Logo Rodape" class="rodape__img">
+                <p class="rodape__direitos">&copy Henrique Angar - 2021</p>
+            </div>
+        </footer>
+
+        <script src="js/inserirTabela.js"></script>
+        <script src="js/inserirLinha.js"></script>
+        <script src="js/feito.js"></script>  
+        <script src="js/alternaCorLinhas.js"></script>  
+        <script src="js/deletar.js"></script>
+        <script src="js/editarTitulo.js"></script>
+        <script src="js/inserirDescricao.js"></script>
+        <script src="js/inserirQuantidade.js"></script>
+        <script src="js/inserirPreco.js"></script>
+        <script src="js/multiplicarValores.js"></script>
+        <script src="js/calcularSubTotais.js"></script>
+        <script src="js/calcularTotal.js"></script>
+
+    </body>
+</html>

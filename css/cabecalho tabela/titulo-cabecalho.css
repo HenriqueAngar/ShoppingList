@@ -1,0 +1,28 @@
+
+.titulo__done, .titulo__qtde, .titulo__descricao, .titulo__preco,.titulo__subtotal{
+    border: 2px solid var(--laranja);
+    font-size: 2rem;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px){
+    .titulo__done, .titulo__qtde, .titulo__descricao, .titulo__preco,.titulo__subtotal{
+        font-size: 1rem;
+    }
+}
+
+.titulo__qtde{
+    width: 10vw;
+}
+
+.titulo__preco{
+    width: 10vw;
+}
+
+.titulo__descricao{
+    width: 80vw;
+}
+
+.titulo__subtotal{
+    width: 7vw;
+}

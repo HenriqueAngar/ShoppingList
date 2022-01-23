@@ -1,0 +1,36 @@
+.cabecalho__vetor{
+    margin: 15px 30px 15px;
+}
+
+.cabecalho__texto{
+    position: relative;
+    bottom: 30px;
+}
+
+@media screen and (max-width: 1024px){
+    .cabecalho__logo{
+        align-content: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cabecalho__texto, .cabecalho__vetor{
+        display: block;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 765px){
+    .cabecalho__vetor{
+        max-width: 150px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .cabecalho__texto{
+        max-width: 100%;
+        width: auto;
+    }
+}

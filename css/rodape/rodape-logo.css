@@ -1,0 +1,28 @@
+.rodape__logo{
+    background-color: var(--branco);
+    padding: 15px;
+    position: relative;
+}
+
+.rodape__img{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 450px){
+    .rodape__img{
+        max-width: 100%;
+        width: auto;
+    }
+}
+
+.rodape__direitos{
+    color: var(--fundo);
+    font-family: var(--texto);
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+}
+

@@ -1,0 +1,88 @@
+.tabela__linha1, .tabela__linha2{
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.tabela__linha1{
+    background: var(--branco);
+}
+
+.tabela__linha2{
+    background: var(--cinza-fraco);
+}
+
+.tabela__done, .tabela__qtde, .tabela__descricao, .tabela__preco, .tabela__multiplicacao{
+    border: 1px solid var(--laranja);
+    padding: 4px;
+    vertical-align: middle;
+    transition: 0.5s;
+}
+
+.tabela__preco, .tabela__multiplicacao{
+    text-align: right;
+}
+
+.tabela__qtde:hover, .tabela__descricao:hover, .tabela__preco:hover{
+    color: var(--laranja);
+    cursor:pointer;
+    font-family: bold;
+    transform: scale(1.05);
+}
+
+.tabela__preco:hover{
+    padding-right: 12px;
+}
+
+@media screen and (max-width: 768px){
+    .tabela__linha1, .tabela__linha2{
+        font-size: 0.75rem;
+    }
+
+    .tabela__done, .tabela__qtde, .tabela__descricao, .tabela__preco, .tabela__multiplicacao{
+        padding: 0;
+    }
+}
+
+.tabela__done{
+    width: 3.45vw;
+}
+
+.tabela__qtde{
+    width: 9vw;
+}
+
+.tabela__descricao{
+    width: 58vw;
+}
+
+.tabela__preco{
+    width: 9vw;
+}
+
+.tabela__multiplicacao{
+    width: 20vw;
+}
+
+@media screen and (max-width: 765px){
+    .tabela__done{
+        width: 3.45vw;
+    }
+    
+    .tabela__qtde{
+        width: 8.65vw;
+    }
+    
+    .tabela__descricao{
+        width: 55vw;
+    }
+    
+    .tabela__preco{
+        width: 12vw;
+    }
+    
+    .tabela__multiplicacao{
+        width: 15vw;
+    }
+}

@@ -1,0 +1,22 @@
+.titulo{
+    background: var(--branco);
+    border: 2px solid var(--laranja);
+    border-radius: 10px;
+    color: var(--laranja);
+    font-family: var(--titulo);
+    font-weight: bold;
+    margin: 10px auto 5px auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 97vw;
+}
+
+@media screen and (max-width: 768px){
+    .titulo{
+        border-width: 2px;
+        border-radius: 5px;
+    }
+}

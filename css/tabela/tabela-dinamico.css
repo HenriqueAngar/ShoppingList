@@ -1,0 +1,42 @@
+.done{
+    border: 2px solid var(--laranja);
+    color: var(--fundo);
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.done:hover{
+    cursor: pointer;
+}
+
+.feito{
+    text-decoration: line-through;
+}
+
+.input__titulo{
+    background-color: var(--cinza-fraco);
+    border: 0px rgba(0,0,0,0);
+    color: var(--fundo);
+    font-family: var(--titulo);
+    font-size: 2rem;
+    font-weight: bold;
+    height: 100%;
+    margin: none;
+    outline: 0;
+    text-align: center;
+    width: 90%;
+}
+
+.input__conteudo{
+    background-color: var(--cinza-fraco);
+    border: 0px rgba(0,0,0,0);
+    color: var(--fundo);
+    font-family: var(--titulo);
+    font-size: 1.25rem;
+    font-weight: bold;
+    height: 100%;
+    margin: none;
+    outline: 0;
+    text-align: center;
+    width: 90%;
+}
