@@ -17,7 +17,9 @@ function carregarValores(){
         var quantidade = refinarQuantidade(quantidadeBruta);
         var preco = refinarPreco(precoBruto);
 
-        if(quantidade == false || preco == false){
+        console.log(quantidade, preco);
+
+        if(quantidade == false || preco == false || quantidade == "" || preco == ""){
 
             var resultado = "R$ 0.00"
             inserirResultados(resultado, local);
