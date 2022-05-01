@@ -7,7 +7,7 @@ function adcionarLinhas (){
     var novaLinha = criarConteudo ();
 
     local.appendChild(novaLinha);
-    inserirComportamentosTabelas();
+    refreshPage(false);
 }
 
 function criaPrimeiraLinha (){

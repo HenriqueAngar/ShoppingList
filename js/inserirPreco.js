@@ -1,5 +1,3 @@
-processarPrecos();
-
 function processarPrecos (){
 
     var listaPrecos = document.getElementsByClassName('tabela__preco');

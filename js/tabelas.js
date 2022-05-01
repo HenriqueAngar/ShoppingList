@@ -4,8 +4,13 @@ function criarNovaTabela(texto, nome){
    if(nome){
       criaTabela(texto);
       criaPrimeiraLinha();
+      refreshPage(true);
 
-   }else{ comecarCriarTabela();}
+   }else{ 
+      comecarCriarTabela();
+      corrigeCorLinhas();
+      refreshPage(false);
+   }
 }
 
  // Inicia o processo de criação de uma nova tabela
@@ -38,8 +43,6 @@ function criarNovaTabela(texto, nome){
     novaTabela.appendChild(corpoTabela);
     corpoTabela.appendChild(cabecalhoTabela);
     corpoTabela.appendChild(linhaTopo);
-
-    inserirComportamentosTabelas();
  }
 
 function criaCabecalho (titulo){

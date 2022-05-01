@@ -1,5 +1,3 @@
-processarDescricao();
-
 function processarDescricao(){
 
     var listaDeDescricoes = document.getElementsByClassName('tabela__descricao');

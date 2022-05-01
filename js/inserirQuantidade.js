@@ -1,5 +1,3 @@
-processarQuantidades();
-
 function processarQuantidades(){
 
     var listaQuantidades = document.getElementsByClassName('tabela__qtde');

@@ -1,5 +1,3 @@
-calcularTotal();
-
 function calcularTotal (){
 
     var listaDeSubTotais = document.getElementsByClassName('tabela__cabecalho-subtotal');

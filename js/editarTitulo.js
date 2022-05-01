@@ -1,5 +1,3 @@
-processarTitulos();
-
 function processarTitulos(){
 
     var listaDeTitulos = document.getElementsByClassName('tabela__cabecalho-descricao');

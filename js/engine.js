@@ -1,17 +1,6 @@
-//Aciona a inserção de elementos dinâmicos ao sistema
-function inserirComportamentosTabelas(){
+//Arquivo principal das Funcionalidades das tabelas
 
-    insereSeletoresDone();
-    seletoresMaisLinhasTabelas();
-    engatilharLinhas();
-    processarTitulos();
-    processarDescricao();
-    processarQuantidades();
-    processarPrecos();
-    //carregarValores();
- }
-
-//Adciona os gatilhos que configuram a criação de novas tabelas
+//Adciona ao iniciar os gatilhos que configuram a criação de novas tabelas
 function gatilhoNovaTabela(){ 
 
     // inserção de uma nova tabela por botão
@@ -23,9 +12,34 @@ function gatilhoNovaTabela(){
        if (e.key === 'Enter') {criarNovaTabela(false);}}); 
  }
 
-// Adciona os gatilhos para adicionar linhas a tabela desejada
-function seletoresMaisLinhasTabelas (){
+//Atualiza as configurações da página
+function refreshPage(primeiro){
 
-    var listaBotoes = document.getElementsByClassName("tabela__cabecalho-botao");
-    for (var i = 0; i <= listaBotoes.length - 1; i++){ listaBotoes[i].addEventListener("click", adcionarLinhas);}
+    camposDinamicos();
+    processarTitulos();
+    if(primeiro = false) {calcularValores();}
+    corrigeCorLinhas();
  }
+
+//Adiciona o padrão de zebrado as tabelas
+function corrigeCorLinhas (){
+
+    var listaDeLinhas = document.getElementsByTagName("tr");
+
+    // começa em 2 para evitar de selecionar os dois cabeçalhos anteriores
+    for(var a = 2; a < listaDeLinhas.length; a++){
+
+        var ehPar = a % 2;
+        var linha = listaDeLinhas[a];
+        var classe = linha.classList.value;
+
+        if (classe = "tabela__linha1" || "tabela__linha2"){
+            switch(ehPar){
+
+                case 0: linha.classList.replace("tabela__linha1", "tabela__linha2"); break;
+                case 1: linha.classList.replace("tabela__linha2", "tabela__linha1"); break;
+        }}
+    }
+}
+
+

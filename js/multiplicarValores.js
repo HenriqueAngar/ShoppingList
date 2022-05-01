@@ -1,6 +1,4 @@
 // arquivo responsável por calcular o produto de quantidade e preço e inseri-los na tabela
-carregarValores();
-
 function carregarValores(){
 
     var listaDeQuantidades = document.getElementsByClassName('tabela__qtde');
@@ -16,8 +14,6 @@ function carregarValores(){
 
         var quantidade = refinarQuantidade(quantidadeBruta);
         var preco = refinarPreco(precoBruto);
-
-        console.log(quantidade, preco);
 
         if(quantidade == false || preco == false || quantidade == "" || preco == ""){
 
