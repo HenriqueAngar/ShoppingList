@@ -1,14 +1,14 @@
-// inserção de uma nova tabela por tecla enter
-document.querySelector('#inserir-campo').addEventListener('keypress', function (e) {
-   if (e.key === 'Enter') {
-      comecarCriarTabela();
-   }
-});
+//Adciona os gatilhos que configuram a criação de novas tabelas
+function gatilhoNovaTabela(){ 
 
- // inserção de uma nova tabela por botão
- var InserirTabela = document.querySelector("#adcionar-tabela");
+   // inserção de uma nova tabela por tecla enter
+   document.querySelector('#inserir-campo').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {comecarCriarTabela();}});
 
- InserirTabela.addEventListener("click", comecarCriarTabela);
+   // inserção de uma nova tabela por botão
+   var InserirTabela = document.querySelector("#adcionar-tabela");
+   InserirTabela.addEventListener("click", comecarCriarTabela);
+}
 
  // Inicia o processo de criação de uma nova tabela
  function comecarCriarTabela () {
@@ -18,23 +18,11 @@ document.querySelector('#inserir-campo').addEventListener('keypress', function (
    tituloCodigo.value = "";
 
    var textIsTrue = verificaTexto(titulo);
-
-   if (textIsTrue){
-
-      criaTabela (titulo);
-
+   if (textIsTrue){criaTabela (titulo);
    }else{return;}
 }
 
- function verificaTexto(titulo){
-
-      if (titulo == ""){
-         return false;
-      
-      }else {
-         return true;
-      }
- }
+ function verificaTexto(titulo){if (titulo == ""){return false;}else {return true;}}
 
  function criaTabela (titulo){
 
@@ -83,19 +71,7 @@ function criaCabecalho (titulo){
    cabecalho.appendChild(descricao);
    cabecalho.appendChild(subtotal);
    cabecalho.appendChild(valor);
-
    return cabecalho;
 }
 
-function inserirComportamentosTabela(){
 
-   insereSeletoresDone();
-   seletoresMaisLinhasTabelas();
-   engatilharTabelas();
-   engatilharLinhas();
-   processarTitulos();
-   processarDescricao();
-   processarQuantidades();
-   processarPrecos();
-   carregarValores();
-}

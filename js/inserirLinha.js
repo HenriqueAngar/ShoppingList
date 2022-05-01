@@ -1,27 +1,18 @@
-// Adciona Escutas de eventos a todos os botões de mais nos cabeçalhos
-seletoresMaisLinhasTabelas ();
-
+// Adciona gatilhos de eventos a todos os botões nos cabeçalhos
 function seletoresMaisLinhasTabelas (){
 
     var listaBotoes = document.getElementsByClassName("tabela__cabecalho-botao");
-
-    for (var i = 0; i <= listaBotoes.length - 1; i++){
-
-        listaBotoes[i].addEventListener("click", adcionarLinhas);
-    }
+    for (var i = 0; i <= listaBotoes.length - 1; i++){ listaBotoes[i].addEventListener("click", adcionarLinhas);}
 }
 
 // Inicia sequencia de adição de linhas na tabela
 function adcionarLinhas (){
 
     var estaTabela = this.parentElement.parentElement.parentElement;
-
     var local = estaTabela.querySelector("tbody");
-
     var novaLinha = criarConteudo ();
 
     local.appendChild(novaLinha);
-
     inserirComportamentosLinhas();
 }
 
@@ -29,11 +20,9 @@ function criaPrimeiraLinha (){
 
     var tbody = document.createElement("tbody");
     tbody.classList.add("tabela__corpo");
-
     var linha = criarConteudo();
 
     tbody.appendChild(linha);
-
     return tbody;
 }      
 
