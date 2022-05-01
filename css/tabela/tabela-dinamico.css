@@ -11,6 +11,7 @@
 
 .feito{
     text-decoration: line-through;
+    color: gray;
 }
 
 .input__titulo{

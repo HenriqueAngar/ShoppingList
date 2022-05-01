@@ -13,9 +13,8 @@ function gatilhoNovaTabela(){
 //Atualiza as configurações da página
 function refreshPage(action, value){
 
-    if(action){camposDinamicos();}
-    if(value){calcularValores();}
-    processarTitulos();
+    if(action){insertActionsToTables();}
+    //if(value){calcularValores();}
     handleLineColor();
  }
 
