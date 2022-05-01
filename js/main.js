@@ -10,7 +10,7 @@ function main(){
 
     //Cria uma nova lista de compras
     }else{ 
-        criarNovaTabela("Clique uma vez para editar e duas para excluir", true);
+        criaTabela("Clique para inserir o texto")
         gatilhoNovaTabela();
     }
 }

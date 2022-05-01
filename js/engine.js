@@ -1,28 +1,26 @@
-//Arquivo principal das Funcionalidades das tabelas
-
 //Adciona ao iniciar os gatilhos que configuram a criação de novas tabelas
 function gatilhoNovaTabela(){ 
 
     // inserção de uma nova tabela por botão
     let botao = document.getElementById("adcionar-tabela")
-    botao.addEventListener("click", () => criarNovaTabela("",false));
+    botao.addEventListener("click", () => initNewTable());
     
     // inserção de uma nova tabela por tecla enter
     document.querySelector('#inserir-campo').addEventListener('keypress', function (e) {
-       if (e.key === 'Enter') {criarNovaTabela(false);}}); 
+       if (e.key === 'Enter') {initNewTable();}}); 
  }
 
 //Atualiza as configurações da página
-function refreshPage(primeiro){
+function refreshPage(action, value){
 
-    camposDinamicos();
+    if(action){camposDinamicos();}
+    if(value){calcularValores();}
     processarTitulos();
-    if(primeiro = false) {calcularValores();}
-    corrigeCorLinhas();
+    handleLineColor();
  }
 
 //Adiciona o padrão de zebrado as tabelas
-function corrigeCorLinhas (){
+function handleLineColor (){
 
     var listaDeLinhas = document.getElementsByTagName("tr");
 
