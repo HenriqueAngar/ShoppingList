@@ -15,8 +15,39 @@ function refreshPage(action, value){
 
     if(action){insertActionsToTables();}
     //if(value){calcularValores();}
+    handleDeleteAction();
     handleLineColor();
  }
+
+//Control the delete action in tables and lines
+function handleDeleteAction(){
+
+    let tables = getItems("tabela__cabecalho");
+    let blankLines = getItems("tabela__linha1");
+    let coloredLines = getItems("tabela__linha2");
+ 
+    insertDeleteAction(tables, true);
+    insertDeleteAction(blankLines, false);
+    insertDeleteAction(coloredLines, false);
+}
+
+//Get a especified html collecion
+function getItems(name){
+
+    let collection = document.getElementsByClassName(name);
+    collection = Array.from(collection); return collection;
+}
+
+function insertDeleteAction(list, isTable){ list.forEach(element => { 
+
+    element.addEventListener("contextmenu", function (e){ deleteThis(element, isTable)})});}
+
+function deleteThis(thisOne, isTable){
+
+    if(isTable){ thisOne.parentElement.parentElement.remove(); 
+    }else{ thisOne.remove();}
+    refreshPage(false, true)
+}
 
 //Adiciona o padrão de zebrado as tabelas
 function handleLineColor (){
