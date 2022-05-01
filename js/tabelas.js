@@ -1,28 +1,24 @@
-//Adciona os gatilhos que configuram a criação de novas tabelas
-function gatilhoNovaTabela(){ 
+//Gerencia a criação de novas tabelas
+function criarNovaTabela(texto, nome){
 
-   // inserção de uma nova tabela por tecla enter
-   document.querySelector('#inserir-campo').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {comecarCriarTabela();}});
+   if(nome){
+      criaTabela(texto);
+      criaPrimeiraLinha();
 
-   // inserção de uma nova tabela por botão
-   var InserirTabela = document.querySelector("#adcionar-tabela");
-   InserirTabela.addEventListener("click", comecarCriarTabela);
+   }else{ comecarCriarTabela();}
 }
 
  // Inicia o processo de criação de uma nova tabela
  function comecarCriarTabela () {
 
-   var tituloCodigo = document.querySelector("#inserir-campo");
-   var titulo = tituloCodigo.value;
-   tituloCodigo.value = "";
+   var tituloInicial = document.querySelector("#inserir-campo");
+   var tituloFinal = tituloInicial.value;
+   tituloInicial.value = "";
 
-   var textIsTrue = verificaTexto(titulo);
-   if (textIsTrue){criaTabela (titulo);
-   }else{return;}
+   var textIsTrue = new Boolean;
+   if (tituloFinal == ""){ textIsTrue = false;}else {textIsTrue = true;}
+   if (textIsTrue){criaTabela (tituloFinal);}else{return;}
 }
-
- function verificaTexto(titulo){if (titulo == ""){return false;}else {return true;}}
 
  function criaTabela (titulo){
 
@@ -43,7 +39,7 @@ function gatilhoNovaTabela(){
     corpoTabela.appendChild(cabecalhoTabela);
     corpoTabela.appendChild(linhaTopo);
 
-    inserirComportamentosTabela();
+    inserirComportamentosTabelas();
  }
 
 function criaCabecalho (titulo){
@@ -73,5 +69,8 @@ function criaCabecalho (titulo){
    cabecalho.appendChild(valor);
    return cabecalho;
 }
+
+
+
 
 

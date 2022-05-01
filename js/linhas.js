@@ -1,9 +1,3 @@
-// Adciona gatilhos de eventos a todos os botões nos cabeçalhos
-function seletoresMaisLinhasTabelas (){
-
-    var listaBotoes = document.getElementsByClassName("tabela__cabecalho-botao");
-    for (var i = 0; i <= listaBotoes.length - 1; i++){ listaBotoes[i].addEventListener("click", adcionarLinhas);}
-}
 
 // Inicia sequencia de adição de linhas na tabela
 function adcionarLinhas (){
@@ -13,7 +7,7 @@ function adcionarLinhas (){
     var novaLinha = criarConteudo ();
 
     local.appendChild(novaLinha);
-    inserirComportamentosLinhas();
+    inserirComportamentosTabelas();
 }
 
 function criaPrimeiraLinha (){
@@ -63,15 +57,3 @@ function criarConteudo(){
 
     return conteudo;
 }
-
-function inserirComportamentosLinhas(){
-    
-    corrigeCorLinhas();
-    insereSeletoresDone();
-    engatilharLinhas();
-    processarDescricao();
-    processarQuantidades();
-    processarPrecos();
-    carregarValores();
-}
-
