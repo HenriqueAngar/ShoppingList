@@ -1,4 +1,7 @@
+
 .cabecalho{
     background-color: var(--branco);
+    max-width: 100%;
+    width: auto;
 }
 

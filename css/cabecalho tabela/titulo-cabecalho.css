@@ -7,7 +7,12 @@
 
 @media screen and (max-width: 768px){
     .titulo__done, .titulo__qtde, .titulo__descricao, .titulo__preco,.titulo__subtotal{
-        font-size: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .titulo__descricao{
+        max-width: 120%;
+        width: auto;
     }
 }
 

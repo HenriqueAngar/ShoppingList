@@ -21,10 +21,19 @@
     right:-10px;
 }
 
-@media screen and (max-width: 765px){
+@media screen and (max-width: 768px){
     .rodape__total{
         font-size: 2rem;
         padding: 5px;
         width: 200px;
+    }
+
+    .rodape__gasto, .rodape__valor{
+        text-align: center;
+        width: 100%;
+    }
+
+    .rodape__valor-p{
+        margin-top: 12px;
     }
 }

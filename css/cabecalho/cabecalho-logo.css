@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 765px){
     .cabecalho__vetor{
-        max-width: 150px;
+        max-width: 100%;
         width: auto;
     }
 }

@@ -37,11 +37,16 @@
 
 @media screen and (max-width: 768px){
     .tabela__linha1, .tabela__linha2{
-        font-size: 0.75rem;
+        font-size: 1.3rem;
+        align-items: left;
     }
 
     .tabela__done, .tabela__qtde, .tabela__descricao, .tabela__preco, .tabela__multiplicacao{
         padding: 0;
+    }
+
+    .tabela__multiplicacao{
+        text-align: left;
     }
 }
 
@@ -80,6 +85,8 @@
     
     .tabela__preco{
         width: 12vw;
+        text-align: left;
+        padding-left: 5px;
     }
     
     .tabela__multiplicacao{

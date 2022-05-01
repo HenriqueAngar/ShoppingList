@@ -1,6 +1,6 @@
 .tabela__cabecalho{
     background-color: var(--cinza-fraco);
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-family: var(--titulo);
     font-weight: bold;
 }
@@ -15,31 +15,37 @@
     width:auto;
 }
 
+.tabela__cabecalho-subtotal{
+    text-align: right;
+}
+
 @media screen and (max-width: 768px){
     .tabela__cabecalho{
-        font-size: 0.75rem;
+        font-size: 1.3rem;
+    }
+
+    .tabela__cabecalho th{
+        padding: 3px;
     }
 
     .tabela__cabecalho-subtotal{
-        font-size: 0.75rem;
+        font-size: 1.25rem;
+        text-align: left;
     }
 
     .tabela__cabecalho-descricao{
         min-width: 58vw;
         width:auto;
-    }
-    
+    }   
 }
 
 .tabela__cabecalho-botao, .tabela__cabecalho-descricao{
     transition: 0.5s;
 }
+
 .tabela__cabecalho-botao:hover, .tabela__cabecalho-descricao:hover{
     color: var(--laranja);
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.tabela__cabecalho-subtotal{
-    text-align: right;
-}
