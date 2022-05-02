@@ -67,7 +67,7 @@ function adcionarLinhas (thisTable){
    var novaLinha = criarConteudo ();
    let local = thisTable
    local.appendChild(novaLinha);
-   refreshPage(false, false);
+   refreshPage(true, false);
 }
 
 function criaPrimeiraLinha (){

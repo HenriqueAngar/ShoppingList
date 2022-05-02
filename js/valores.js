@@ -1,58 +1,78 @@
 function calcularValores(){
-    
-    console.log("Math Bitch!")
-    processarDescricao();
-    processarQuantidades();
-    processarPrecos();
+
     carregarValores();
+    processarSubtotais();
+    calcularTotal();
+}
+
+// arquivo responsável por calcular o produto de quantidade e preço e inseri-los na tabela
+function carregarValores(){
+
+    var listaDeQuantidades = document.getElementsByClassName('tabela__qtde');
+    var listaDePrecos = document.getElementsByClassName('tabela__preco');
+    var listaDeCelulas = document.getElementsByClassName('tabela__multiplicacao');
+
+    for( var j = 0; j < listaDeCelulas.length; j++){
+
+        var local = listaDeCelulas[j];
+
+        var quantidadeBruta = listaDeQuantidades[j].innerHTML;
+        var precoBruto = listaDePrecos[j].innerText;
+        var quantidade = parseFloat(quantidadeBruta);
+        var preco = moneyToFloat(precoBruto);
+
+        var produto = quantidade*preco;
+        var resultado = "R$ 0.00";
+        if(isNaN(produto)){ produto = "R$ 0.00"
+        }else{resultado = produto.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}
+        local.innerText = resultado;
+    }
 }
 
 //arquivo referente ao cálculo individual de cada um dos subtotais presentes na tabela;
 function processarSubtotais (){
 
     var listaSubtotais = document.getElementsByClassName('tabela__cabecalho-subtotal');
-
-    for(var k = 0; k < listaSubtotais.length; k++){
-
-        var tabela = listaSubtotais[k].parentElement.parentElement.parentElement;
+    listaSubtotais = Array.from(listaSubtotais);
+    
+    listaSubtotais.forEach( subTotal => {
+        var tabela = subTotal.parentElement.parentElement.parentElement;
         var listaDeProdutos = tabela.getElementsByClassName('tabela__multiplicacao');
-        var local = listaSubtotais[k];
-        var subTotal = calcularSubtotal(listaDeProdutos);
-        inserirSubtotais(local, subTotal);
-    }
+        var local = subTotal;
+        var resultado = calcularSubtotal(listaDeProdutos);
+        resultado = resultado.toLocaleString("pt-br", {style: "currency", currency: "BRL"});
+        local.innerText = resultado;
+    })        
 }
 
 function calcularSubtotal (listaDeProdutos){
 
     var subTotal = 0;
+    listaDeProdutos = Array.from(listaDeProdutos);
 
-    for(var l = 0; l < listaDeProdutos.length; l++){
-
-        var conteudoCelula = listaDeProdutos[l].innerHTML;
-        var valorCelula = parseFloat(conteudoCelula.slice(3, conteudoCelula.length));
-
+    listaDeProdutos.forEach( produto => {
+        
+        var valorCelula = moneyToFloat(produto.innerText);
         subTotal += valorCelula;
-    }
-
-    return subTotal;
+    }); return subTotal;
 }
 
-function inserirSubtotais (local, subTotal){
+function calcularTotal (){
 
-    if(subTotal == 0){var zeroEsquerda = 0;
-    }else{
-        var texto = `${subTotal}`
-        var arrayValor = texto.split('.');
+    var total = 0;
+    var listaDeSubTotais = document.getElementsByClassName('tabela__cabecalho-subtotal');
+    listaDeSubTotais = Array.from(listaDeSubTotais);
     
-        if(arrayValor == 1 || arrayValor[1]==undefined){ var zeroEsquerda = 0;
-        }else{ var zeroEsquerda = arrayValor[1].length;}
-    }
-   
+    listaDeSubTotais.forEach(valor => { let valorRefinado = moneyToFloat(valor.innerText); total += valorRefinado;})
 
-    switch(zeroEsquerda){
+    let resultado = total.toLocaleString("pt-br", {style: "currency", currency: "BRL"})
+    let local = document.querySelector('.rodape__valor-p');
+    local.innerText = resultado;
+}
 
-        case 0: local.innerHTML = `R$ ${subTotal}.00`; break;
-        case 1: local.innerHTML = `R$ ${subTotal}0`; break;
-        case 2: local.innerHTML = `R$ ${subTotal}`; break;
-    }
+function moneyToFloat(value){
+
+    value = value.split('$'); value = value[1].replace(",",".")
+    let monetary = parseFloat(value);
+    return monetary;
 }

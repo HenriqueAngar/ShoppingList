@@ -15,7 +15,7 @@ function refreshPage(action, value){
     
     gatilhoNovaTabela();
     if(action){insertActionsToTables();}
-    //if(value){calcularValores();}
+    if(value){calcularValores();}
     handleDeleteAction();
     handleLineColor();
  }
