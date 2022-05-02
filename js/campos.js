@@ -2,7 +2,6 @@
 function insertActionsToTables(){
     
     insertAction("tableTitle");
-    insertAction("plusLine");
     insertAction("done");
     insertAction("qtde");
     insertAction("item");
@@ -17,11 +16,7 @@ function insertAction(type){
 
     switch(type){
         
-        //theade elements
-        case 'plusLine': className = "tabela__cabecalho-botao"; break;
         case 'tableTitle': className = "tabela__cabecalho-descricao"; break;
-
-        //tbody elements
         case "done": className = 'done'; break;
         case "qtde": className = "tabela__qtde"; break;
         case "item": className = "tabela__descricao"; break;
@@ -36,15 +31,12 @@ function insertAction(type){
 //For to control the number of open inputs
 let inputClick = 0;
 
+
 function toAddEvent(list, type){
 
     switch (type){
 
-        //thead elements
-        case "plusLine": list.forEach(element => { element.addEventListener("click", function (e){ adcionarLinhas(element, true, false); refreshPage(true, false)})}); break;
         case "tableTitle": list.forEach(element => { element.addEventListener("click", function (e){ inputClick++; insertTitle(element)})}); break;
-
-        //tbody elements
         case "done": list.forEach(element => { element.addEventListener("click", function (e){ handleDone(element)})}); break;
         case "qtde": list.forEach(element => { element.addEventListener("click", function (e){ inputClick++; editarQuantidade(element)})}); break;
         case "item": list.forEach(element => { element.addEventListener("click", function (e){ inputClick++; handleDescription(element)})}); break;

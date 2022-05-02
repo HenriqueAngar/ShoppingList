@@ -3,16 +3,17 @@ function gatilhoNovaTabela(){
 
     // inserção de uma nova tabela por botão
     let botao = document.getElementById("adcionar-tabela")
-    botao.addEventListener("click", () => initNewTable());
+    botao.addEventListener("click", function (clique){ initNewTable();});
     
     // inserção de uma nova tabela por tecla enter
-    document.querySelector('#inserir-campo').addEventListener('keypress', function (e) {
-       if (e.key === 'Enter') {initNewTable();}}); 
+    document.querySelector('#inserir-campo').addEventListener('keypress', 
+    function (e) {if (e.key === 'Enter') {initNewTable();}});
  }
 
 //Atualiza as configurações da página
 function refreshPage(action, value){
-
+    
+    gatilhoNovaTabela();
     if(action){insertActionsToTables();}
     //if(value){calcularValores();}
     handleDeleteAction();
@@ -44,7 +45,7 @@ function insertDeleteAction(list, isTable){ list.forEach(element => {
 
 function deleteThis(thisOne, isTable){
 
-    if(isTable){ thisOne.parentElement.parentElement.remove(); 
+    if(isTable){ thisOne.parentElement.remove(); 
     }else{ thisOne.remove();}
     refreshPage(false, true)
 }

@@ -12,23 +12,23 @@
 
  function criaTabela (titulo){
 
-    var espaco = document.querySelector(".tabelas");
+   var espaco = document.querySelector(".tabelas");
 
-    var novaTabela = document.createElement("div");
-    novaTabela.classList.add("tabela");
+   var novaTabela = document.createElement("div");
+   novaTabela.classList.add("tabela");
 
-    var corpoTabela = document.createElement("table");
-    corpoTabela.classList.add("tabela__estrutura");
+   var corpoTabela = document.createElement("table");
+   corpoTabela.classList.add("tabela__estrutura");
 
-    var cabecalhoTabela = criaCabecalho(titulo);
+   var cabecalhoTabela = criaCabecalho(titulo);
+   var linhaTopo = criaPrimeiraLinha();
 
-    var linhaTopo = criaPrimeiraLinha();
+   corpoTabela.appendChild(cabecalhoTabela);
+   corpoTabela.appendChild(linhaTopo);
+   novaTabela.appendChild(corpoTabela);
+   espaco.appendChild(novaTabela);
 
-    espaco.appendChild(novaTabela);
-    novaTabela.appendChild(corpoTabela);
-    corpoTabela.appendChild(cabecalhoTabela);
-    corpoTabela.appendChild(linhaTopo);
-
+   cabecalhoTabela.firstChild.addEventListener('click', function (e){adcionarLinhas(corpoTabela.lastChild)});
    refreshPage(true, false);
  }
 
@@ -40,6 +40,7 @@ function criaCabecalho (titulo){
    var botao = document.createElement("th");
    botao.classList.add("tabela__cabecalho-botao");
    botao.innerHTML = "&#10010;";
+   
 
    var descricao = document.createElement("th");
    descricao.classList.add("tabela__cabecalho-descricao");
@@ -63,10 +64,8 @@ function criaCabecalho (titulo){
 // Inicia sequencia de adição de linhas na tabela
 function adcionarLinhas (thisTable){
 
-   var thisTable = thisTable.parentElement.parentElement;
    var novaLinha = criarConteudo ();
-
-   let local = thisTable.querySelector("tbody");
+   let local = thisTable
    local.appendChild(novaLinha);
    refreshPage(false, false);
 }
